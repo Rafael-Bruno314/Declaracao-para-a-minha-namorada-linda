@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Clarinha</title>
+    <style>
+        :root {
+            --cor-laranja: #FFB347;
+            --cor-romantica: #e92015;
+            --cor-destaque: #FFD1DC;
+            --cor-texto: #5A2A27;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(45deg, var(--cor-laranja), var(--cor-romantica));
+            min-height: 100vh;
+            color: var(--cor-texto);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            animation: fadeIn 2s;
+        }
+
+        .image-frame {
+            border: 5px solid var(--cor-destaque);
+            border-radius: 20px;
+            margin: 20px;
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .image-frame:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 50%;
+            aspect-ratio: 10 / 5;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .gallery-image-top {
+            width: 100%;
+            height: 50%;
+            aspect-ratio: 10 / 5;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .gallery-image-image {
+            width: 100%;
+            height: 100%;
+            aspect-ratio: 5 / 4;  /*Proporção de 4:3 (largura : altura) */
+            object-fit: cover;
+            display: block;
+            /*object-position: top;  Foca na parte superior da imagem */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .text-section {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            margin: 40px 0;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 40px 0;
+        }
+
+        button {
+            background: var(--cor-romantica);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin: 20px;
+        }
+
+        button:hover {
+            background: var(--cor-laranja);
+            transform: translateY(-3px);
+        }
+
+        .romantic-text {
+            color: var(--cor-texto); /* Usando a cor definida no :root */
+            font-size: 1.1rem; /* Tamanho de fonte levemente aumentado */
+            line-height: 1.6; /* Espaçamento entre linhas para melhor legibilidade */
+            text-align: justify; /* Texto alinhado justificado */
+            margin: 1rem 0; /* Margem para espaçamento entre parágrafos */
+            padding: 1rem; /* Espaçamento interno */
+            background-color: rgba(255, 255, 255, 0.9); /* Fundo branco semi-transparente */
+            border-radius: 10px; /* Bordas arredondadas */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para destaque */
+            transition: all 0.3s ease-in-out; /* Transição suave para efeitos de hover */
+        }
+
+        .romantic-text-title {
+            color: var(--cor-texto); /* Usando a cor definida no :root */
+            font-size: 1.5rem; /* Tamanho de fonte levemente aumentado */
+            line-height: 1.6; /* Espaçamento entre linhas para melhor legibilidade */
+            text-align: center; /* Texto alinhado justificado */
+            margin: 1rem 0; /* Margem para espaçamento entre parágrafos */
+            padding: 1rem; /* Espaçamento interno */
+            background-color: rgba(255, 255, 255, 0.9); /* Fundo branco semi-transparente */
+            border-radius: 10px; /* Bordas arredondadas */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para destaque */
+            transition: all 0.3s ease-in-out; /* Transição suave para efeitos de hover */
+        }
+
+        .romantic-text:hover {
+            background-color: rgba(255, 255, 255, 1); /* Fundo branco sólido ao passar o mouse */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra mais intensa no hover */
+            transform: translateY(-2px); /* Efeito de levitação */
+        }
+
+        @keyframes heartBeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .heart {
+            animation: heartBeat 1.5s infinite;
+            color: var(--cor-romantica);
+            font-size: 48px;
+            margin: 20px;
+        }
+
+        .centro {
+            text-align: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="hero">
+            <p class="romantic-text-title"><b>Uma declaração virtual de amor para a menina mais incrível desse mundo</b></p><br>
+            
+            <div class="image-frame">
+                <img src="foto-principal.jpg" alt="Nossa Foto" class="gallery-image-top">
+            </div>
+            <h1>Conselheiro Lafaiete, 29 de janeiro de 2025</h1>
+
+            <p class="romantic-text">
+                Prezada gatinha, <br><br>
+
+                Esse ainda não é o álbum de fotos (que logo logo vai sair), mas sim uma ideia que tenho a muito tempo:
+                poder mostrar o quanto eu te amo através de uma página totalmente dedicada a você. <br><br>
+
+                A sua presença e companhia são maravilhosas. Não consigo mensurar o quão sortudo sou de ter você ao meu lado. 
+                Seu companherismo, sua alegria, sua amizade, seu amor... irradiam na minha vida e tornam todos os dias ainda melhores por te ter.
+                <br><br>
+
+                Com carinho <br>
+                Rafael Bruno
+            </p>
+
+
+
+            <div class="heart">♥</div>
+        </section>
+
+        <section class="text-section">
+            <p class="centro">Só um pequeno registro de como minha namorada é linda, incrível e cheia de personalidade!!</p>
+        </section>
+
+        <div class="gallery">
+            <div class="image-frame">
+                <img src="foto1.jpg" alt="Momento 1" class="gallery-image-image">
+            </div>
+            <div class="image-frame">
+                <img src="foto2.jpg" alt="Momento 2" class="gallery-image-image">
+            </div>
+            <div class="image-frame">
+                <img src="foto3.jpg" alt="Momento 3" class="gallery-image-image">
+            </div>
+            <div class="image-frame">
+                <img src="foto4.jpg" alt="Momento 4" class="gallery-image-image">
+            </div>
+            <div class="image-frame">
+                <img src="foto5.jpg" alt="Momento 5" class="gallery-image-image">
+            </div>
+            <div class="image-frame">
+                <img src="foto6.jpg" alt="Momento 6" class="gallery-image-image">
+            </div>
+            <div class="image-frame">
+                <img src="foto7.jpg" alt="Momento 7" class="gallery-image-image">
+            </div>
+            <div class="image-frame">
+                <img src="foto8.jpg" alt="Momento 8" class="gallery-image-image">
+            </div>
+            <div class="image-frame">
+                <img src="foto9.jpg" alt="Momento 9" class="gallery-image-image">
+            </div>
+            <div class="image-frame">
+                <img src="foto10.jpg" alt="Momento 10" class="gallery-image-image">
+            </div>
+            <div class="image-frame">
+                <img src="foto11.jpg" alt="Momento 11" class="gallery-image-image">
+            </div>
+            <div class="image-frame">
+                <img src="foto12.jpg" alt="Momento 12" class="gallery-image-image">
+            </div>
+        </div>
+
+        <section class="text-section">
+            <p class="romantic-text">Agradeço muito por ter você ao meu lado e por todo o seu comanheirismo. Desejo sempre e pra sempre que nosso
+                relacionamento se amplie e cresça cada dia mais.
+            </p>
+            <button id="loveButton">Clique Aqui (só uma gracinha) ❤️</button>
+        </section>
+
+        <section class="moments-section">
+            <div class="image-frame">
+                <img src="momento-especial.jpg" alt="Momento Especial" class="gallery-image" style="height: 500px;">
+            </div>
+            <div class="text-section">
+                <p class="romantic-text">E que a próxima foto minha ajoelhado para você seja com um anél/aliança de noivado!! <br> <br> 
+                Te amo muito, gatinha!!
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        document.getElementById('loveButton').addEventListener('click', function() {
+            const heart = document.createElement('div');
+            heart.innerHTML = '♥';
+            heart.style.position = 'fixed';
+            heart.style.left = Math.random() * window.innerWidth + 'px';
+            heart.style.top = Math.random() * window.innerHeight + 'px';
+            heart.style.color = '#FF6961';
+            heart.style.fontSize = '48px';
+            heart.style.animation = 'heartBeat 1s';
+            
+            document.body.appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 1000);
+        });
+
+        // Efeito de parallax suave
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            document.querySelector('.hero').style.backgroundPositionY = -(scrolled * 0.5) + 'px';
+        });
+    </script>
+</body>
+</html>
