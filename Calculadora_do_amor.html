@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora do Amor</title>
+    <style>
+
+        /* Novo estilo para o cabeçalho */
+        .header {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--cor-romantica);
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-link {
+            color: var(--cor-texto);
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        .nav-link:hover {
+            background-color: var(--cor-destaque);
+            color: var(--cor-romantica);
+        }
+
+        .nav-button {
+            background: var(--cor-romantica);
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .nav-button:hover {
+            background: var(--cor-laranja);
+            transform: translateY(-2px);
+        }
+
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #ff99cc;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            max-width: 500px;
+            width: 90%;
+        }
+
+        h1 {
+            color: #ff0066;
+            margin-bottom: 30px;
+        }
+
+        .input-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+
+        input {
+            padding: 10px;
+            border: 2px solid #ff0066;
+            border-radius: 10px;
+            font-size: 16px;
+            width: 150px;
+        }
+
+        button {
+            background: #ff0066;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #cc0052;
+        }
+
+        #resultScreen {
+            display: none;
+        }
+
+        .percentage {
+            font-size: 80px;
+            color: #ff0066;
+            margin: 20px 0;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hearts {
+            font-size: 40px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    
+    <header class="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Nosso Amor ❤️</a>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Página Principal</a>
+                <a href="Calculadora_do_amor.html" class="nav-button">Calculadora do Amor</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container" id="inputScreen">
+        <h1>❤️ Calculadora do Amor ❤️</h1>
+        <p>Bem vindo à calculadora do amor, por favor coloque os nomes dos pretendentes</p>
+        <div class="input-container">
+            <input type="text" id="name1" placeholder="Primeiro nome">
+            <input type="text" id="name2" placeholder="Segundo nome">
+        </div>
+        <button onclick="checkCompatibility()">Ver compatibilidade</button>
+    </div>
+
+    <div class="container" id="resultScreen">
+        <h1>💖 Resultado da Compatibilidade 💖</h1>
+        <p>A compatibilidade é de</p>
+        <div class="percentage" id="percentage">0%</div>
+        <div class="hearts">💑 ❤️ 💞</div>
+        <button onclick="tryAgain()">Tentar de novo</button>
+    </div>
+
+    <script>
+        
+        function checkCompatibility() {
+            
+            // Obter os nomes dos campos
+            const name1 = document.getElementById('name1').value.trim().toLowerCase();
+            const name2 = document.getElementById('name2').value.trim().toLowerCase();
+
+            // Lista de nomes especiais
+            const claraNames = ['clarinha', 'maria clara', 'clara'];
+            const rafaelNames = ['rafa', 'rafael bruno', 'rafael'];
+
+            // Verificar combinação especial
+            let percentage;
+            if ((claraNames.includes(name1) && rafaelNames.includes(name2)) ||
+                (claraNames.includes(name2) && rafaelNames.includes(name1))) {
+                percentage = 100;
+            } else {
+                // Gerar porcentagem aleatória para outros casos
+                percentage = Math.floor(Math.random() * 101);
+            }
+
+            // Atualizar exibição
+            document.getElementById('inputScreen').style.display = 'none';
+            document.getElementById('resultScreen').style.display = 'block';
+            document.getElementById('percentage').textContent = percentage + '%';
+        }
+
+        function tryAgain() {
+            // Resetar campos e voltar para tela inicial
+            document.getElementById('inputScreen').style.display = 'block';
+            document.getElementById('resultScreen').style.display = 'none';
+            document.getElementById('name1').value = '';
+            document.getElementById('name2').value = '';
+        }
+    </script>
+</body>
+</html>
