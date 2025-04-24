@@ -95,6 +95,7 @@
             box-shadow: 0 0 20px rgba(0,0,0,0.1);
             max-width: 500px;
             width: 90%;
+            margin-top: 30px;
         }
 
         h1 {
@@ -148,6 +149,35 @@
             font-size: 40px;
             margin: 20px 0;
         }
+        
+
+        @media (max-width: 768px) {
+            /* Ajustes para tablets */
+            .nav-container {
+                padding: 0 10px;
+            }
+            .nav-link {
+                font-size: 0.8rem;
+            }
+            .input-container {
+                flex-direction: column; /* Empilha os campos em mobile */
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* Ajustes para celulares pequenos */
+            .nav-link {
+                display: none; /* Esconde texto longo */
+            }
+            .nav-button {
+                padding: 6px 10px; /* Botão mais compacto */
+            }
+        }
+
+        input, button {
+            min-height: 44px; /* Tamanho mínimo para toque */
+        }
+
     </style>
 </head>
 <body>
@@ -164,7 +194,6 @@
 
     <!-- Tela de entrada -->
     <div class="container" id="inputScreen">
-        <br><br><br><br><br>
         <h1>❤️ Calculadora do Amor ❤️</h1>
         <p>Bem vindo à calculadora do amor, por favor coloque os nomes dos pretendentes</p>
         <div class="input-container">
