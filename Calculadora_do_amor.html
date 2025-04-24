@@ -151,18 +151,29 @@
     </style>
 </head>
 <body>
-    
     <!-- Cabeçalho ajustado -->
     <header class="header">
         <div class="nav-container">
             <a href="index.html" class="logo">❤️</a>
             <nav class="nav-menu">
                 <a href="index.html" class="nav-link">Página Principal</a>
-                <a href="Calculadora_do_amor.html" class="nav-button">Calculadora</a>
+                <a href="Calculadora_do_amor.html" class="nav-button">Calculadora do Amor</a>
             </nav>
         </div>
     </header>
 
+    <!-- Tela de entrada -->
+    <div class="container" id="inputScreen">
+        <h1>❤️ Calculadora do Amor ❤️</h1>
+        <p>Bem vindo à calculadora do amor, por favor coloque os nomes dos pretendentes</p>
+        <div class="input-container">
+            <input type="text" id="name1" placeholder="Primeiro nome">
+            <input type="text" id="name2" placeholder="Segundo nome">
+        </div>
+        <button onclick="checkCompatibility()">Ver compatibilidade</button>
+    </div>
+
+    <!-- Tela de resultado -->
     <div class="container" id="resultScreen">
         <h1>💖 Resultado da Compatibilidade 💖</h1>
         <p>A compatibilidade é de</p>
