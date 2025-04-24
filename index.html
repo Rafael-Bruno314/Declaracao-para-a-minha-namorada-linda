@@ -222,6 +222,34 @@
             from { opacity: 0; }
             to { opacity: 1; }
         }
+
+        @media (max-width: 768px) {
+            /* Ajustes para tablets */
+            .nav-container {
+                padding: 0 10px;
+            }
+            .nav-link {
+                font-size: 0.8rem;
+            }
+            .input-container {
+                flex-direction: column; /* Empilha os campos em mobile */
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* Ajustes para celulares pequenos */
+            .nav-link {
+                display: none; /* Esconde texto longo */
+            }
+            .nav-button {
+                padding: 6px 10px; /* Botão mais compacto */
+            }
+        }
+
+        input, button {
+            min-height: 44px; /* Tamanho mínimo para toque */
+        }
+
     </style>
 </head>
 <body>
